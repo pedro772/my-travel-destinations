@@ -1,0 +1,133 @@
+* {
+  margin: 0;
+}
+
+body {
+  font-family: Inter, sans-serif;
+  box-sizing: border-box;
+}
+
+.navbar {
+  background-color: #F55A5A;
+  color: #ffffff;
+  height: 55px;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 10px;
+}
+
+.navbar--icon {
+  width: 24px;
+  padding-right: 7px;
+}
+
+.navbar--header {
+  font-size: 14px;
+  font-weight: 500;
+  font-style: normal;
+  line-height: 18px;
+  letter-spacing: -0.075em;
+}
+
+.cards {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding-bottom: 35px;
+}
+
+.card {
+  display: flex;
+  flex-direction: row;
+
+  padding: 35px 40px 0px 40px;
+}
+
+.card--image {
+  width: 8vw;
+  height: 14vw;
+
+  margin-right: 20px;
+  border-radius: 10px;
+}
+
+.card--info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.card--info-location {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: relative;
+
+  margin-bottom: 7px;
+}
+
+.card--location-pin {
+  width: 8px;
+  margin-right: 4px;
+}
+
+.card--location-text {
+  color: #2B283A;
+
+  font-weight: 400;
+  font-style: normal;
+  font-size: 14px;
+
+  margin-right: 12px;
+}
+
+.card--location-link {
+  color: #918E9B;
+
+  font-weight: 400;
+  font-style: normal;
+  font-size: 14px;
+  text-decoration-line: underline;
+  text-underline-offset: 2px;
+}
+
+.card--title {
+  color: #2B283A;
+  font-weight: bold;
+  font-size: 25px;
+  line-height: 30px;
+
+  height: 40px;
+  margin-bottom: 7px;
+}
+
+.card--dates {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  color: #2B283A;
+
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 16px;
+
+  margin-bottom: 9px;
+}
+
+.card--description {
+  color: #2B283A;
+
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1em;
+  line-height: 150%;
+}
+
+
