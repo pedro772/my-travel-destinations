@@ -38,14 +38,14 @@ body {
   flex-direction: column;
   align-items: center;
 
-  padding-bottom: 35px;
+  padding-top: 25px;
 }
 
 .card {
   display: flex;
   flex-direction: row;
 
-  padding: 35px 40px 0px 40px;
+  padding: 0px 40px 35px 40px;
 }
 
 .card--image {
@@ -130,4 +130,34 @@ body {
   line-height: 150%;
 }
 
+.show-modal {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
 
+  height: 30px;
+
+  background-color: #ffffff;
+  border: solid 2px;
+  border-color: #F55A5A;
+  border-radius: 8px;
+
+  margin: 25px 35px 10px 35px;
+}
+
+.add-icon {
+  width: 12px;
+  margin-right: 5px;
+}
+
+.show-modal:hover {
+  background-color: #F55A5A;
+  border-color: #F55A5A;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.show-modal:hover svg {
+  fill: #ffffff;
+}
