@@ -8,6 +8,16 @@ import data from "./data";
 function App() {
 
   const [show, setShow] = useState(false);
+  const [formData, setFormData] = useState({
+    id: null,
+    title: "",
+    location: "",
+    googleMapsUrl: "",
+    startDate: "",
+    endDate: "",
+    description: "",
+    imageUrl: ""
+  });
 
   const cardData = data.map(item =>
     <Card
@@ -17,6 +27,20 @@ function App() {
 
   function closeModal() {
     setShow(false);
+  }
+
+  function submitData(dataToAdd) {
+    data.push(dataToAdd);
+    setFormData({
+      id: null,
+      title: "",
+      location: "",
+      googleMapsUrl: "",
+      startDate: "",
+      endDate: "",
+      description: "",
+      imageUrl: ""
+    })
   }
 
   const closeOnEscapeKeyDown = e => {
@@ -37,10 +61,10 @@ function App() {
 
       <button onClick={() => setShow(true)} className="show-modal">
         <img src="/images/add-icon.svg" alt="Ícone de adicionar" className="add-icon" />
-        Adicionar novo destino
+        <h3 className="add-text">Adicionar novo destino</h3>
       </button>
 
-      <Modal show={show} closeModal={closeModal} />
+      <Modal show={show} formData={formData} closeModal={closeModal} setFormData={setFormData} submitData={submitData} />
 
       <div className="cards">
         {cardData}

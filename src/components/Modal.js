@@ -8,6 +8,31 @@ export default function Modal(props) {
         props.closeModal();
     }
 
+    function handleChanges(e) {
+        const {name, value} = e.target;
+        const setFormData = props.setFormData;
+
+        setFormData(prevData => ({
+            ...prevData,
+            [name]: value
+        }));
+    }
+
+    function handleSubmit() {
+        props.submitData(props.formData);
+        props.closeModal();
+        props.formData = {
+            id: null,
+            title: "",
+            location: "",
+            googleMapsUrl: "",
+            startDate: "",
+            endDate: "",
+            description: "",
+            imageUrl: ""
+        }
+    }
+
     return ReactDOM.createPortal(
         <CSSTransition
             in={props.show}
@@ -27,50 +52,57 @@ export default function Modal(props) {
                                 className="form-input"
                                 placeholder="Cidade e local"
                                 name="title"
-                                value={props.title}
+                                value={props.formData.title}
+                                onChange={handleChanges}
                             />
                             <input 
                                 type="text"
                                 className="form-input"
                                 placeholder="País"
                                 name="location"
-                                value={props.location}
+                                value={props.formData.location}
+                                onChange={handleChanges}
                             />
                             <input 
                                 type="text"
                                 className="form-input"
                                 placeholder="Link do local no Google Maps"
                                 name="googleMapsUrl"
-                                value={props.googleMapsUrl}
+                                value={props.formData.googleMapsUrl}
+                                onChange={handleChanges}
                             />
                             <input 
                                 type="date"
                                 className="form-input"
                                 name="startDate"
-                                value={props.startDate}
+                                value={props.formData.startDate}
+                                onChange={handleChanges}
                             />
                             <input 
                                 type="date"
                                 className="form-input"
-                                name="startDate"
-                                value={props.startDate}
+                                name="endDate"
+                                value={props.formData.endDate}
+                                onChange={handleChanges}
                             />
                             <textarea 
                                 type="text"
                                 className="form-input"
                                 placeholder="Descrição do local"
                                 name="description"
-                                value={props.description}
+                                value={props.formData.description}
+                                onChange={handleChanges}
                             />
                             <input 
                                 type="text"
                                 className="form-input"
                                 placeholder="Link de uma foto representativa"
-                                name="googleMapsUrl"
-                                value={props.imageUrl}
+                                name="imageUrl"
+                                value={props.formData.imageUrl}
+                                onChange={handleChanges}
                             />
                         </div>
-                        <button className="form-button">
+                        <button className="form-button" onClick={handleSubmit}>
                             Cadastrar novo destino
                         </button>
                     </div>
