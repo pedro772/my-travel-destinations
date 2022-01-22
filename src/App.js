@@ -25,10 +25,6 @@ function App() {
       {...item} />
   )
 
-  function closeModal() {
-    setShow(false);
-  }
-
   function resetForm() {
     setFormData({
       id: null,
@@ -42,6 +38,11 @@ function App() {
     });
   }
 
+  function closeModal() {
+    setShow(false);
+    resetForm();
+  }
+
   function submitData(dataToAdd) {
     dataToAdd = {
       ...dataToAdd,
@@ -49,7 +50,7 @@ function App() {
     }
     data.push(dataToAdd);
 
-    resetForm();
+    closeModal();
   }
 
   const closeOnEscapeKeyDown = e => {

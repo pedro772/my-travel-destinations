@@ -34,10 +34,7 @@
     transform: translateY(-200px);
     transition: all 0.3s ease-in-out;
 
-    border-style: solid;
-    border-width: 5px;
-    border-radius: 5px;
-    border-color: #F55A5A;
+    border-radius: 10px;
 }
 
 .modal.enter-done .modal-content {
@@ -67,6 +64,7 @@
     font-weight: 300;
     font-family: Inter;
     font-size: 12px;
+    border-radius: 10px 10px 0px 0px;
 }
 
 .icon-close {
@@ -94,15 +92,65 @@
   
     margin-bottom: 15px;
 }
-  
-.form-input {
-    height: 30px;
-  
-    border: 1px solid #D5D4D8;
-    border-radius: 10px;
-    text-indent: 5px;
 
-    margin-bottom: 12px;
+.form-input {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+
+    height: 30px;
+    margin-bottom: 20px;
+}
+
+.form-input input {
+    height: 30px;
+    
+    border: none;
+    border-bottom: 2px solid #F55A5A;
+    outline: 0;
+    transition: all 0.3s ease-in-out;
+
+    font-size: 14px;
+    text-indent: 2px;
+}
+
+.form-input textarea {
+    height: 30px;
+    resize: none;
+    overflow: hidden;
+
+    border: none;
+    border-bottom: 2px solid #F55A5A;
+    outline: 0;
+    transition: all 0.3s ease-in-out;
+
+    font-size: 14px;
+    text-indent: 2px;
+}
+
+.form-input label span {
+    position: absolute;
+    text-indent: 4px;
+    top: 5px;
+    transition: all 0.2s ease-in-out;
+    font-size: 14px;
+
+    cursor: text;
+    color: #2B283A;
+}
+
+.form-input input:focus, textarea:focus {
+    border-color: #BDBFC0;
+}
+
+.form-input input:valid, textarea:valid {
+    border-color: #BDBFC0;
+}
+
+.form-input input:focus + label > span, textarea:focus + label > span,
+.form-input input:valid + label > span, textarea:valid + label > span {
+    top: -14px;
+    font-size: 12px;
 }
 
 .form-button {

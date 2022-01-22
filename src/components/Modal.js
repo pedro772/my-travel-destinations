@@ -20,17 +20,6 @@ export default function Modal(props) {
 
     function handleSubmit() {
         props.submitData(props.formData);
-        props.closeModal();
-        props.formData = {
-            id: null,
-            title: "",
-            location: "",
-            googleMapsUrl: "",
-            startDate: "",
-            endDate: "",
-            description: "",
-            imageUrl: ""
-        }
     }
 
     return ReactDOM.createPortal(
@@ -39,7 +28,7 @@ export default function Modal(props) {
             unmountOnExit
             timeout={{ enter: 0, exit: 300 }} 
         >
-            <div className={`modal ${props.show ? "show" : ""}`} onClick={handleClick}>
+            <div className={`modal ${props.show ? "show" : ""}`}>
                 <div className="modal-content" onClick={e => e.stopPropagation()}>
                     <header className="modal-header">
                         <h2>Qual seu próximo destino?</h2>
@@ -47,60 +36,81 @@ export default function Modal(props) {
                     </header>
                     <div className="form">
                         <div className="form-inputs">
-                            <input 
-                                type="text"
-                                className="form-input"
-                                placeholder="Cidade e local"
-                                name="title"
-                                value={props.formData.title}
-                                onChange={handleChanges}
-                            />
-                            <input 
-                                type="text"
-                                className="form-input"
-                                placeholder="País"
-                                name="location"
-                                value={props.formData.location}
-                                onChange={handleChanges}
-                            />
-                            <input 
-                                type="text"
-                                className="form-input"
-                                placeholder="Link do local no Google Maps"
-                                name="googleMapsUrl"
-                                value={props.formData.googleMapsUrl}
-                                onChange={handleChanges}
-                            />
-                            <input 
-                                type="date"
-                                className="form-input"
-                                name="startDate"
-                                value={props.formData.startDate}
-                                onChange={handleChanges}
-                            />
-                            <input 
-                                type="date"
-                                className="form-input"
-                                name="endDate"
-                                value={props.formData.endDate}
-                                onChange={handleChanges}
-                            />
-                            <textarea 
-                                type="text"
-                                className="form-input"
-                                placeholder="Descrição do local"
-                                name="description"
-                                value={props.formData.description}
-                                onChange={handleChanges}
-                            />
-                            <input 
-                                type="text"
-                                className="form-input"
-                                placeholder="Link de uma foto representativa"
-                                name="imageUrl"
-                                value={props.formData.imageUrl}
-                                onChange={handleChanges}
-                            />
+                            <div className="form-input">
+                                <input 
+                                    type="text"
+                                    name="title"
+                                    id="title"
+                                    value={props.formData.title}
+                                    onChange={handleChanges}
+                                    required
+                                />
+                                <label for="title"><span>Cidade - Local</span></label>
+                            </div>
+                            <div className="form-input">
+                                <input 
+                                    type="text"
+                                    name="location"
+                                    id="location"
+                                    value={props.formData.location}
+                                    onChange={handleChanges}
+                                    required
+                                />
+                                <label for="location"><span>País</span></label>
+                            </div>
+                            <div className="form-input">
+                                <input 
+                                    type="text"
+                                    name="googleMapsUrl"
+                                    id="googleMapsUrl"
+                                    value={props.formData.googleMapsUrl}
+                                    onChange={handleChanges}
+                                    required
+                                />
+                                <label for="googleMapsUrl"><span>Link do local no Google Maps</span></label>
+                            </div>
+                            <div className="form-input">
+                                <input 
+                                    type="date"
+                                    name="startDate"
+                                    id="startDate"
+                                    value={props.formData.startDate}
+                                    onChange={handleChanges}
+                                    required
+                                />
+                            </div>
+                            <div className="form-input">
+                                <input 
+                                    type="date"
+                                    name="endDate"
+                                    id="endDate"
+                                    value={props.formData.endDate}
+                                    onChange={handleChanges}
+                                    required
+                                />
+                            </div>
+                            <div className="form-input">
+                                <textarea 
+                                    type="text"
+                                    name="description"
+                                    id="description"
+                                    value={props.formData.description}
+                                    onChange={handleChanges}
+                                    required
+                                />
+                                <label for="description"><span>Descrição do local</span></label>
+                            </div>
+                            <div className="form-input">
+                                <input 
+                                    type="text"
+                                    name="imageUrl"
+                                    id="imageUrl"
+                                    value={props.formData.imageUrl}
+                                    onChange={handleChanges}
+                                    required
+                                />
+                                <label for="imageUrl"><span>Link de uma foto representativa</span></label>
+                            </div>
                         </div>
                         <button className="form-button" onClick={handleSubmit}>
                             <img src="/images/add-destination-icon.svg" alt="Ícone de adicionar novo destino" className="add-icon" />

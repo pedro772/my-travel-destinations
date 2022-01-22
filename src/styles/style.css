@@ -44,7 +44,8 @@ body {
 .card {
   display: flex;
   flex-direction: row;
-  align-self: flex-start;
+  align-self: center;
+  max-width: 1280px;
 
   padding: 0px 40px 35px 40px;
 }
@@ -178,4 +179,16 @@ body {
 
 .show-modal:hover svg {
   fill: #ffffff;
+}
+
+button:focus {
+  transition: none;
+  outline-color: #F55A5A;
+  box-shadow: none;
+}
+
+.card--location-link:focus, .card--location-link:hover {
+  outline: 0;
+  color: #F55A5A;
+  text-decoration-color: #F55A5A;
 }
