@@ -29,8 +29,7 @@ function App() {
     setShow(false);
   }
 
-  function submitData(dataToAdd) {
-    data.push(dataToAdd);
+  function resetForm() {
     setFormData({
       id: null,
       title: "",
@@ -40,7 +39,17 @@ function App() {
       endDate: "",
       description: "",
       imageUrl: ""
-    })
+    });
+  }
+
+  function submitData(dataToAdd) {
+    dataToAdd = {
+      ...dataToAdd,
+      id: data.length + 1
+    }
+    data.push(dataToAdd);
+
+    resetForm();
   }
 
   const closeOnEscapeKeyDown = e => {

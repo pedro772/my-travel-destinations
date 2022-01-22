@@ -103,7 +103,8 @@ export default function Modal(props) {
                             />
                         </div>
                         <button className="form-button" onClick={handleSubmit}>
-                            Cadastrar novo destino
+                            <img src="/images/add-destination-icon.svg" alt="Ícone de adicionar novo destino" className="add-icon" />
+                            <h3 className="add-text">Cadastrar novo destino</h3>
                         </button>
                     </div>
                 </div>
