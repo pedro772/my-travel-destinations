@@ -33,105 +33,6 @@ body {
   letter-spacing: -0.075em;
 }
 
-.cards {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  padding-top: 25px;
-}
-
-.card {
-  display: flex;
-  flex-direction: row;
-  align-self: center;
-  max-width: 1280px;
-
-  padding: 0px 40px 35px 40px;
-}
-
-.card--image {
-  width: 8vw;
-  height: 14vw;
-
-  margin-right: 20px;
-  border-radius: 10px;
-}
-
-.card--info {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.card--info-location {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  position: relative;
-
-  margin-bottom: 7px;
-}
-
-.card--location-pin {
-  width: 8px;
-  margin-right: 4px;
-}
-
-.card--location-text {
-  color: #2B283A;
-
-  font-weight: 400;
-  font-style: normal;
-  font-size: 14px;
-
-  margin-right: 12px;
-}
-
-.card--location-link {
-  color: #918E9B;
-
-  font-weight: 400;
-  font-style: normal;
-  font-size: 14px;
-  text-decoration-line: underline;
-  text-underline-offset: 2px;
-}
-
-.card--title {
-  color: #2B283A;
-  font-weight: bold;
-  font-size: 25px;
-  line-height: 30px;
-
-  height: 40px;
-  margin-bottom: 7px;
-}
-
-.card--dates {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-
-  color: #2B283A;
-
-  font-style: normal;
-  font-weight: bold;
-  font-size: 14px;
-  line-height: 16px;
-
-  margin-bottom: 9px;
-}
-
-.card--description {
-  color: #2B283A;
-
-  font-style: normal;
-  font-weight: normal;
-  font-size: 1em;
-  line-height: 150%;
-}
-
 .show-modal {
   display: flex;
   flex-direction: row;
@@ -185,10 +86,4 @@ button:focus {
   transition: none;
   outline-color: #F55A5A;
   box-shadow: none;
-}
-
-.card--location-link:focus, .card--location-link:hover {
-  outline: 0;
-  color: #F55A5A;
-  text-decoration-color: #F55A5A;
 }

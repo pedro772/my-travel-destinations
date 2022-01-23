@@ -6,8 +6,9 @@ import Modal from "./components/Modal";
 import data from "./data";
 
 function App() {
-
+  // States
   const [show, setShow] = useState(false);
+  const [edit, setEdit] = useState(false);
   const [formData, setFormData] = useState({
     id: null,
     title: "",
@@ -19,8 +20,11 @@ function App() {
     imageUrl: ""
   });
 
+  // Create Card components
   const cardData = data.map(item =>
     <Card
+      editCard={editCard}
+      setEdit={setEdit}
       key={item.id}
       {...item} />
   )
@@ -40,15 +44,22 @@ function App() {
 
   function closeModal() {
     setShow(false);
+    setEdit(false);
     resetForm();
   }
 
   function submitData(dataToAdd) {
-    dataToAdd = {
-      ...dataToAdd,
-      id: data.length + 1
+    if(edit) {
+      const indexedId = dataToAdd.id - 1;
+      data.splice(indexedId, 1, dataToAdd);
+    } else {
+      dataToAdd = {
+        ...dataToAdd,
+        id: data.length + 1
+      }
+      data.push(dataToAdd);
     }
-    data.push(dataToAdd);
+    
 
     closeModal();
   }
@@ -65,6 +76,12 @@ function App() {
       }
   }, []);
 
+  function editCard(id) {
+    const indexedId = id - 1;
+    setFormData(data[indexedId]);
+    setShow(true);
+  }
+
   return (
     <div className="App">
       <Navbar />
@@ -74,7 +91,7 @@ function App() {
         <h3 className="add-text">Adicionar novo destino</h3>
       </button>
 
-      <Modal show={show} formData={formData} closeModal={closeModal} setFormData={setFormData} submitData={submitData} />
+      <Modal show={show} edit={edit} formData={formData} closeModal={closeModal} setFormData={setFormData} submitData={submitData} />
 
       <div className="cards">
         {cardData}

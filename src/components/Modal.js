@@ -32,7 +32,9 @@ export default function Modal(props) {
                 <div className="modal-content" onClick={e => e.stopPropagation()}>
                     <header className="modal-header">
                         <h2>Qual seu próximo destino?</h2>
-                        <img src="/images/close-icon.svg" alt="Ícone de fechar" className="icon-close" onClick={handleClick}/>
+                        <div className="icon-close">
+                            <img src="/images/close-icon.svg" alt="Ícone de fechar" onClick={handleClick}/>
+                        </div>
                     </header>
                     <div className="form">
                         <div className="form-inputs">
@@ -112,10 +114,12 @@ export default function Modal(props) {
                                 <label for="imageUrl"><span>Link de uma foto representativa</span></label>
                             </div>
                         </div>
+                        {
                         <button className="form-button" onClick={handleSubmit}>
                             <img src="/images/add-destination-icon.svg" alt="Ícone de adicionar novo destino" className="add-icon" />
                             <h3 className="add-text">Cadastrar novo destino</h3>
                         </button>
+                        }
                     </div>
                 </div>
             </div>

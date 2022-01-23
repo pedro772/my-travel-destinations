@@ -50,7 +50,7 @@
 }
 
 .modal-header {
-    background-color: #F55A5A;
+    background-color: #f55a5a;
     color: #ffffff;
     height: 40px;
   
@@ -68,14 +68,23 @@
 }
 
 .icon-close {
-    height: 20px;
     align-self: right;
     position: absolute;
     right: 10px;
+
+    padding: 5px;
+    border-radius: 5px;
+    transition: all 0.25s ease-in-out;
+}
+
+.icon-close img {
+    align-self: center;
+    height: 20px;
 }
 
 .icon-close:hover {
     cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.1);
 }
 
 .form {
