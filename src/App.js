@@ -127,8 +127,10 @@ function App() {
         <h3 className="add-text">Adicionar novo destino</h3>
       </button>
 
-      <div className="cards">
-        {cardData}
+      <div className="container">
+        <div className="cards">
+          {cardData}
+        </div>
       </div>
     </div>
   );
