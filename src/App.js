@@ -46,6 +46,7 @@ function App() {
       return () => {
           document.body.removeEventListener("keydown", closeOnEscapeKeyDown);
       }
+      // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   // Funções relacionadas com fechar modal
