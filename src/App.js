@@ -104,16 +104,7 @@ function App() {
   }
 
   function deleteCard(id) {
-    const indexedId = id - 1;
-
-    let newData = data;
-    newData.splice(indexedId, 1);
-
-    for(let i = 0; i < newData.length; i++) {
-      newData[i].id = i + 1;
-    }
-
-    setData(newData);
+    setData(prevData => prevData.filter(item => item.id !== id));
   }
 
   return (
