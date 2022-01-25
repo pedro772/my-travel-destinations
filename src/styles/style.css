@@ -1,0 +1,110 @@
+* {
+  margin: 0;
+}
+
+body {
+  font-family: Inter, sans-serif;
+  box-sizing: border-box;
+}
+
+.navbar {
+  background-color: #F55A5A;
+  color: #ffffff;
+  height: 55px;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 10px;
+}
+
+.navbar--icon {
+  width: 24px;
+  padding-right: 7px;
+}
+
+.navbar--header {
+  font-size: 14px;
+  font-weight: 500;
+  font-style: normal;
+  line-height: 18px;
+  letter-spacing: -0.075em;
+}
+
+.show-modal {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  position: relative;
+
+  height: 40px;
+  width: 200px;
+
+  background-color: #ffffff;
+  border: solid 2px;
+  border-color: #ffffff;
+  border-radius: 20px;
+
+  box-shadow: 0px 2px 4px #BDBFC0;
+
+  margin: 25px 35px 10px 35px;
+
+  transition: all 0.2s ease-in-out;
+}
+
+.add-icon {
+  width: 12px;
+  margin-left: 5px;
+}
+
+.add-text {
+  color: #000000;
+
+  margin-left: 15px;
+
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1em;
+  line-height: 150%;
+}
+
+.show-modal:hover {
+  background-color: #F55A5A;
+  border-color: #F55A5A;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.show-modal:hover svg {
+  fill: #ffffff;
+}
+
+.show-modal:focus {
+  transition: none;
+  outline-color: #F55A5A;
+  box-shadow: none;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #bdbfc0;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #2b283a;
+}

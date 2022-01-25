@@ -1,0 +1,42 @@
+.confirm-message {
+    display: flex;
+    justify-content: center;
+
+    font-style: bold;
+    font-weight: 600;
+    color: #2B283A;
+    font-size: 16px;
+    
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.confirm-buttons {
+    display: flex;
+    flex-direction: row;
+    align-self: flex-start;
+    justify-content: space-evenly;
+    margin-bottom: 10px;
+}
+
+.confirm-button {
+    background-color: rgba(0, 0, 0, 0.4);;
+    color: #ffffff;
+    width: 90px;
+    height: 30px;
+    font-size: 14px;
+    font-weight: 700;
+    padding: 5px;
+    
+    border: 0;
+    border-radius: 16px;
+}
+
+.confirm-delete {
+    background-color: #F55A5A;
+    color: #ffffff;
+}
+
+.confirm-button:hover {
+    cursor: pointer;
+}

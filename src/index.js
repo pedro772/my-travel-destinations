@@ -1,7 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
-import "./style.css";
+import "./styles/style.css";
+import "./styles/formModal.css";
+import "./styles/messageModal.css";
+import "./styles/card.css";
 
 ReactDOM.render(
   <React.StrictMode>

@@ -1,51 +1,18 @@
-* {
-  margin: 0;
-}
-
-body {
-  font-family: Inter, sans-serif;
-  box-sizing: border-box;
-}
-
-.navbar {
-  background-color: #F55A5A;
-  color: #ffffff;
-  height: 55px;
-
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-
-  margin-bottom: 10px;
-}
-
-.navbar--icon {
-  width: 24px;
-  padding-right: 7px;
-}
-
-.navbar--header {
-  font-size: 14px;
-  font-weight: 500;
-  font-style: normal;
-  line-height: 18px;
-  letter-spacing: -0.075em;
-}
-
 .cards {
   display: flex;
   flex-direction: column;
   align-items: center;
 
-  padding-bottom: 35px;
+  padding-top: 25px;
 }
 
 .card {
   display: flex;
   flex-direction: row;
+  align-self: flex-start;
+  max-width: 1280px;
 
-  padding: 35px 40px 0px 40px;
+  padding: 0px 40px 35px 40px;
 }
 
 .card--image {
@@ -101,9 +68,6 @@ body {
   font-weight: bold;
   font-size: 25px;
   line-height: 30px;
-
-  height: 40px;
-  margin-bottom: 7px;
 }
 
 .card--dates {
@@ -130,4 +94,34 @@ body {
   line-height: 150%;
 }
 
+.card--location-link:focus, .card--location-link:hover {
+  outline: 0;
+  color: #F55A5A;
+  text-decoration-color: #F55A5A;
+}
 
+.card--title-action  {
+  display: flex;
+  flex-direction: row;
+
+  margin-bottom: 20px;
+}
+
+.action-button {
+    background-color: #ffffff;
+    border: 0;
+    padding: 2px;
+    margin-left: 10px;
+}
+
+.action-button:hover {
+    cursor: pointer;
+}
+
+.action-button:focus {
+  outline-color: #F55A5A;
+}
+
+.edit:focus {
+  outline-color: #2B283A;
+}
