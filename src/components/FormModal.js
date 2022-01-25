@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { CSSTransition } from "react-transition-group";
 
-export default function Modal(props) {
+export default function FormModal(props) {
 
     function handleClick() {
         props.closeModal();
@@ -24,11 +24,11 @@ export default function Modal(props) {
 
     return ReactDOM.createPortal(
         <CSSTransition
-            in={props.show}
+            in={props.showForm}
             unmountOnExit
             timeout={{ enter: 0, exit: 300 }} 
         >
-            <div className={`modal ${props.show ? "show" : ""}`}>
+            <div className={`modal ${props.showForm ? "show" : ""}`}>
                 <div className="modal-content" onClick={e => e.stopPropagation()}>
                     <header className="modal-header">
                         <h2>Qual seu próximo destino?</h2>
@@ -47,7 +47,7 @@ export default function Modal(props) {
                                     onChange={handleChanges}
                                     required
                                 />
-                                <label for="title"><span>Cidade - Local</span></label>
+                                <label htmlFor="title"><span>Cidade - Local</span></label>
                             </div>
                             <div className="form-input">
                                 <input 
@@ -58,7 +58,7 @@ export default function Modal(props) {
                                     onChange={handleChanges}
                                     required
                                 />
-                                <label for="location"><span>País</span></label>
+                                <label htmlFor="location"><span>País</span></label>
                             </div>
                             <div className="form-input">
                                 <input 
@@ -69,7 +69,7 @@ export default function Modal(props) {
                                     onChange={handleChanges}
                                     required
                                 />
-                                <label for="googleMapsUrl"><span>Link do local no Google Maps</span></label>
+                                <label htmlFor="googleMapsUrl"><span>Link do local no Google Maps</span></label>
                             </div>
                             <div className="form-input">
                                 <input 
@@ -100,7 +100,7 @@ export default function Modal(props) {
                                     onChange={handleChanges}
                                     required
                                 />
-                                <label for="description"><span>Descrição do local</span></label>
+                                <label htmlFor="description"><span>Descrição do local</span></label>
                             </div>
                             <div className="form-input">
                                 <input 
@@ -111,7 +111,7 @@ export default function Modal(props) {
                                     onChange={handleChanges}
                                     required
                                 />
-                                <label for="imageUrl"><span>Link de uma foto representativa</span></label>
+                                <label htmlFor="imageUrl"><span>Link de uma foto representativa</span></label>
                             </div>
                         </div>
                         {

@@ -9,7 +9,7 @@
 .card {
   display: flex;
   flex-direction: row;
-  align-self: center;
+  align-self: flex-start;
   max-width: 1280px;
 
   padding: 0px 40px 35px 40px;
@@ -100,29 +100,28 @@
   text-decoration-color: #F55A5A;
 }
 
-.card--title-edit  {
+.card--title-action  {
   display: flex;
   flex-direction: row;
 
   margin-bottom: 20px;
 }
 
-.edit-button {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-start;
-    position: relative;
-  
+.action-button {
     background-color: #ffffff;
-    border: solid 2px;
-    border-color: #ffffff;
-
+    border: 0;
+    padding: 2px;
     margin-left: 10px;
-  
-    transition: all 0.2s ease-in-out;
 }
 
-.edit-button:hover {
+.action-button:hover {
     cursor: pointer;
+}
+
+.action-button:focus {
+  outline-color: #F55A5A;
+}
+
+.edit:focus {
+  outline-color: #2B283A;
 }

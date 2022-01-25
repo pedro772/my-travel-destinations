@@ -82,8 +82,29 @@ body {
   fill: #ffffff;
 }
 
-button:focus {
+.show-modal:focus {
   transition: none;
   outline-color: #F55A5A;
   box-shadow: none;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #bdbfc0;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #2b283a;
 }
