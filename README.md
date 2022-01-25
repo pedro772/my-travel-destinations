@@ -2,5 +2,5 @@
 
 https://my-travel-destinations.vercel.app/
 
-![image](https://user-images.githubusercontent.com/50212896/150461486-f3547187-6377-493a-9e4a-10340ea94c02.png)
+![image](https://user-images.githubusercontent.com/50212896/150891387-5f2afd4c-f584-40ef-a0a4-e9e0d11bc796.png)
 
