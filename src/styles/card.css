@@ -21,7 +21,7 @@
   padding: 0px 40px 35px 40px;
 }
 
-.card--image {
+.card__image {
   width: 8vw;
   height: 14vw;
 
@@ -29,13 +29,13 @@
   border-radius: 10px;
 }
 
-.card--info {
+.card__info {
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
-.card--info-location {
+.card__location {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -44,12 +44,12 @@
   margin-bottom: 7px;
 }
 
-.card--location-pin {
+.card__pin {
   width: 8px;
   margin-right: 4px;
 }
 
-.card--location-text {
+.card__country {
   color: #2B283A;
 
   font-weight: 400;
@@ -59,7 +59,7 @@
   margin-right: 12px;
 }
 
-.card--location-link {
+.card__link {
   color: #918E9B;
 
   font-weight: 400;
@@ -69,14 +69,14 @@
   text-underline-offset: 2px;
 }
 
-.card--title {
+.card__title {
   color: #2B283A;
   font-weight: bold;
   font-size: 25px;
   line-height: 30px;
 }
 
-.card--dates {
+.card__dates {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -91,7 +91,7 @@
   margin-bottom: 9px;
 }
 
-.card--description {
+.card__description {
   color: #2B283A;
 
   font-style: normal;
@@ -100,31 +100,31 @@
   line-height: 150%;
 }
 
-.card--location-link:focus, .card--location-link:hover {
+.card__link:focus, .card__link:hover {
   outline: 0;
   color: #F55A5A;
   text-decoration-color: #F55A5A;
 }
 
-.card--title-action  {
+.card__header  {
   display: flex;
   flex-direction: row;
 
   margin-bottom: 20px;
 }
 
-.action-button {
+.button {
     background-color: #ffffff;
     border: 0;
     padding: 2px;
     margin-left: 10px;
 }
 
-.action-button:hover {
+.button:hover {
     cursor: pointer;
 }
 
-.action-button:focus {
+.button:focus {
   outline-color: #F55A5A;
 }
 
