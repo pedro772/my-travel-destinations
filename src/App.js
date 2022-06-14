@@ -1,9 +1,9 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import Navbar from "./components/Navbar";
-import Card from "./components/Card";
-import FormModal from "./components/FormModal";
-import MessageModal from "./components/MessageModal";
+import Navbar from "./components/Navbar/Navbar";
+import Card from "./components/Card/Card";
+import FormModal from "./components/FormModal/FormModal";
+import MessageModal from "./components/MessageModal/MessageModal";
 import baseData from "./data";
 
 function App() {
