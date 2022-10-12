@@ -1,31 +1,30 @@
 .container {
   display: flex;
   flex-direction: column;
-  align-items: center;
+
+  margin-top: 70px;
 }
 
 .cards {
   display: flex;
   flex-direction: column;
-  align-items: center;
 
-  max-width: 1440px;
-  padding-top: 25px;
+  margin-top: 25px;
 }
 
 .card {
   display: flex;
   flex-direction: row;
-  align-self: flex-start;
+  margin: 0px 20px 15px;
 
-  padding: 0px 40px 35px 40px;
+  height: 25vh;
 }
 
 .card__image {
-  width: 8vw;
-  height: 14vw;
+  height: 25vh;
+  object-fit: contain;
 
-  margin-right: 20px;
+  margin-right: 10px;
   border-radius: 10px;
 }
 
@@ -35,45 +34,75 @@
   justify-content: center;
 }
 
-.card__location {
+.card__info--location {
   display: flex;
   flex-direction: row;
   align-items: center;
-  position: relative;
 
-  margin-bottom: 7px;
+  margin-bottom: 4px;
 }
 
-.card__pin {
-  width: 8px;
+.card__location--pin {
+  width: 0.375em;
   margin-right: 4px;
 }
 
-.card__country {
-  color: #2B283A;
+.card__location--text {
+  color: #2b283a;
 
   font-weight: 400;
   font-style: normal;
-  font-size: 14px;
+  font-size: 0.5em;
 
-  margin-right: 12px;
+  margin-right: 8px;
 }
 
-.card__link {
-  color: #918E9B;
+.card__location--link {
+  color: #918e9b;
 
   font-weight: 400;
   font-style: normal;
-  font-size: 14px;
+  font-size: 0.5em;
   text-decoration-line: underline;
   text-underline-offset: 2px;
 }
 
+.card__info--main {
+  display: flex;
+  flex-direction: row;
+
+  margin-bottom: 8px;
+}
+
 .card__title {
-  color: #2B283A;
+  color: #2b283a;
   font-weight: bold;
-  font-size: 25px;
-  line-height: 30px;
+  font-size: 0.75em;
+  line-height: 1.1em;
+}
+
+.card__action--button {
+  background-color: #ffffff;
+  border: none;
+  padding: 2px;
+  margin-left: 4px;
+}
+
+.card__action--button:hover {
+  cursor: pointer;
+}
+
+.card__action--button:focus {
+  outline-color: #f55a5a;
+}
+
+.edit:focus {
+  outline-color: #2b283a;
+}
+
+.card__icon {
+  width: 12px;
+  height: 12px;
 }
 
 .card__dates {
@@ -81,53 +110,86 @@
   flex-direction: row;
   align-items: center;
 
-  color: #2B283A;
+  color: #2b283a;
 
   font-style: normal;
   font-weight: bold;
-  font-size: 14px;
-  line-height: 16px;
+  font-size: 0.5em;
+  line-height: 1em;
 
-  margin-bottom: 9px;
+  margin-bottom: 4px;
 }
 
 .card__description {
-  color: #2B283A;
+  color: #2b283a;
 
   font-style: normal;
   font-weight: normal;
-  font-size: 1em;
+  font-size: 0.5em;
   line-height: 150%;
 }
 
-.card__link:focus, .card__link:hover {
+.card__location--link:focus,
+.card__location--link:hover {
   outline: 0;
-  color: #F55A5A;
-  text-decoration-color: #F55A5A;
+  color: #f55a5a;
+  text-decoration-color: #f55a5a;
 }
 
-.card__header  {
-  display: flex;
-  flex-direction: row;
+@media (min-width: 600px) {
+  .card {
+    height: 15vw;
+    margin: 0px 40px 35px;
+  }
 
-  margin-bottom: 20px;
-}
+  .card__image {
+    height: 15vw;
+    margin-right: 20px;
+  }
 
-.button {
-    background-color: #ffffff;
-    border: 0;
-    padding: 2px;
-    margin-left: 10px;
-}
+  .card__info--location {
+    margin-bottom: 10px;
+  }
 
-.button:hover {
-    cursor: pointer;
-}
+  .card__location--pin {
+    width: 0.5em;
+  }
 
-.button:focus {
-  outline-color: #F55A5A;
-}
+  .card__location--text {
+    font-size: 0.75em;
+    margin-right: 12px;
+  }
 
-.edit:focus {
-  outline-color: #2B283A;
+  .card__location--link {
+    font-size: 0.75em;
+  }
+
+  .card__info--main {
+    margin-bottom: 20px;
+  }
+
+  .card__title {
+    font-size: 1.5em;
+    line-height: 30px;
+  }
+
+  .card__action--button {
+    margin-left: 8px;
+  }
+
+  .card__icon {
+    width: 24px;
+    height: 24px;
+  }
+
+  .card__dates {
+    font-size: 0.75em;
+    line-height: 1em;
+
+    margin-bottom: 10px;
+  }
+
+  .card__description {
+    font-size: 0.8em;
+  }
 }

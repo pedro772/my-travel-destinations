@@ -18,18 +18,18 @@ export default function Card(props) {
         <section className="card">
             <img src={props.imageUrl} alt={props.title} className="card__image"/>
             <div className="card__info">
-                <div className="card__location">
-                    <img src="/images/pin.png" alt="pin" className="card__pin" />
-                    {props.location && <label className="card__country">{props.location}</label>}
-                    {props.googleMapsUrl && <a href={props.googleMapsUrl} target="_blank" rel="noopener noreferrer" className="card__link">View on Google Maps</a>}
+                <div className="card__info--location">
+                    <img src="/images/pin.png" alt="pin" className="card__location--pin" />
+                    {props.location && <label className="card__location--text">{props.location}</label>}
+                    {props.googleMapsUrl && <a href={props.googleMapsUrl} target="_blank" rel="noopener noreferrer" className="card__location--link">View on Google Maps</a>}
                 </div>
-                <div className="card__header">
-                    {props.title && <h2 className="card__title">{props.title}</h2>}
-                    <button onClick={handleEdit} className="button edit">
-                        <img src="/images/edit-icon.svg" alt="Ícone de editar"/>
+                <div className="card__info--main">
+                    {props.title && <h3 className="card__title">{props.title}</h3>}
+                    <button onClick={handleEdit} className="card__action--button edit">
+                        <img className="card__icon" src="/images/edit-icon.svg" alt="Ícone de editar"/>
                     </button>
-                    <button onClick={handleDelete} className="button">
-                        <img src="/images/delete-icon.svg" alt="Ícone de editar"/>
+                    <button onClick={handleDelete} className="card__action--button">
+                        <img className="card__icon" src="/images/delete-icon.svg" alt="Ícone de editar"/>
                     </button>
                 </div>
                 {props.startDate && props.endDate && <h6 className="card__dates">{props.startDate} - {props.endDate}</h6>}

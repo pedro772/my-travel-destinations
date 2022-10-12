@@ -22,19 +22,19 @@ export default function MessageModal(props) {
             timeout={{ enter: 0, exit: 300 }} 
         >
             <div className={`modal ${props.showDeleteMessage ? "show" : ""}`}>
-                <div className="modal-content" onClick={e => e.stopPropagation()}>
-                    <header className="modal-header">
-                        <h2>Deletar destino</h2>
-                        <div className="icon-close">
+                <div className="modal__content" onClick={e => e.stopPropagation()}>
+                    <header className="modal__header">
+                        <h2 className="modal__title">Deletar destino</h2>
+                        <div className="icon--close">
                             <img src="/images/close-icon.svg" alt="Ícone de fechar" onClick={handleClose}/>
                         </div>
                     </header>
-                    <div className="confirm-message">
+                    <div className="confirm-modal__message">
                         <p>Tem certeza que quer deletar esse destino?</p>
                     </div>
-                    <div className="confirm-buttons">
-                        <button className="confirm-button" onClick={handleClose}>Não</button>
-                        <button className="confirm-button confirm-delete" onClick={handleDelete}>Sim</button>
+                    <div className="confirm-modal__buttons">
+                        <button className="confirm-modal__button" onClick={handleClose}>Não</button>
+                        <button className="confirm-modal__button confirm-modal__button--delete" onClick={handleDelete}>Sim</button>
                     </div>
                 </div>
             </div>

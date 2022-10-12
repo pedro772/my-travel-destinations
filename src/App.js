@@ -104,28 +104,14 @@ function App() {
   }
 
   function deleteCard(id) {
-    const indexedId = id - 1;
-
-    let newData = data;
-    newData.splice(indexedId, 1);
-
-    for(let i = 0; i < newData.length; i++) {
-      newData[i].id = i + 1;
-    }
-
-    setData(newData);
+    setData(prevData => prevData.filter(item => item.id !== id));
   }
 
   return (
-    <div className="App">
-      <Navbar />
+    <div className="app">
+      <Navbar setShowForm={setShowForm} />
       <FormModal showForm={showForm} edit={edit} formData={formData} closeModal={closeModal} setFormData={setFormData} submitData={submitData} />
       <MessageModal showDeleteMessage={showDeleteMessage} closeModal={closeModal} deleteCard={deleteCard} cardToDelete={cardToDelete} />
-
-      <button onClick={() => setShowForm(true)} className="show-modal">
-        <img src="/images/add-icon.svg" alt="Ícone de adicionar" className="add-icon" />
-        <h3 className="add-text">Adicionar novo destino</h3>
-      </button>
 
       <div className="container">
         <div className="cards">
