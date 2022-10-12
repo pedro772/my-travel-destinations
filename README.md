@@ -1,6 +1,18 @@
-[W.I.P] Página de destinos de viagens feitas com React.
+# My Travel Destinations
 
+A basic CRUD application that works as a travel journal.
+
+## Technologies, libraries and patterns used:
+
+* React (CRA)
+* Javascript
+* React Transition Group
+* BEM CSS
+
+### Production version link
 https://my-travel-destinations.vercel.app/
 
-![image](https://user-images.githubusercontent.com/50212896/150891387-5f2afd4c-f584-40ef-a0a4-e9e0d11bc796.png)
+### Run the following commands to run the project locally:
+* npm i
+* npm start
 
