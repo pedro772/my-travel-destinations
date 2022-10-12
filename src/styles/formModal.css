@@ -1,200 +1,221 @@
 .modal {
-    position: fixed;
-    left: 0;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.3);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
-    transition: all 0.3s ease-in-out;
-    pointer-events: none;
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+  pointer-events: none;
+
+  z-index: 3;
 }
 
 .modal.show {
-    opacity: 1;
-    pointer-events: visible;
+  opacity: 1;
+  pointer-events: visible;
 }
 
 body.modal.show {
-    overflow-y: hidden;
+  overflow-y: hidden;
 }
 
-.modal.enter-done {
-    opacity: 1;
-    pointer-events: visible;
+.modal.enter--done {
+  opacity: 1;
+  pointer-events: visible;
 }
 
 .modal.exit {
-    opacity: 0;
+  opacity: 0;
 }
 
-.modal-content {
-    width: 500px;
-    background-color: #ffffff;
+.modal__content {
+  width: 40vw;
+  background-color: #ffffff;
 
-    transform: translateY(-200px);
-    transition: all 0.3s ease-in-out;
+  transform: translateY(-200px);
+  transition: all 0.3s ease-in-out;
 
-    border-radius: 10px;
+  border-radius: 10px;
 }
 
-.modal.enter-done .modal-content {
-    transform: translateY(0);
+.modal.enter--done .modal__content {
+  transform: translateY(0);
 }
 
-.modal.exit .modal-content {
-    transform: translateY(-200px);
+.modal.exit .modal__content {
+  transform: translateY(-200px);
 }
 
-.modal.show .modal-content {
-    transform: translateY(0);
+.modal.show .modal__content {
+  transform: translateY(0);
 }
 
-.modal-header {
-    background-color: #f55a5a;
-    color: #ffffff;
-    height: 40px;
-  
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    position: relative;
+.modal__header {
+  background-color: #f55a5a;
+  color: #ffffff;
+  height: 40px;
 
-    font-style: normal;
-    font-weight: 300;
-    font-family: Inter;
-    font-size: 12px;
-    border-radius: 10px 10px 0px 0px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  border-radius: 10px 10px 0px 0px;
 }
 
-.icon-close {
-    align-self: right;
-    position: absolute;
-    right: 10px;
-
-    padding: 5px;
-    border-radius: 5px;
-    transition: all 0.25s ease-in-out;
+.modal__title {
+  font-style: bold;
+  font-weight: 500;
+  font-family: Inter;
+  font-size: 1em;
 }
 
-.icon-close img {
-    align-self: center;
-    height: 20px;
+.icon--close {
+  align-self: right;
+  position: absolute;
+  right: 10px;
+
+  padding: 5px;
+  border-radius: 5px;
+  transition: all 0.25s ease-in-out;
 }
 
-.icon-close:hover {
-    cursor: pointer;
-    background-color: rgba(0, 0, 0, 0.1);
+.icon--close img {
+  align-self: center;
+  height: 20px;
+}
+
+.icon--close:hover {
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.1);
 }
 
 .form {
-    display: flex;
-    flex-direction: column;
-  
-    margin: 36px;
-}
-  
-.form-inputs {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  
-    margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+
+  margin: 36px;
 }
 
-.form-input {
-    display: flex;
-    flex-direction: column;
-    position: relative;
+.form__elements {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 
-    margin-bottom: 20px;
+  margin-bottom: 15px;
 }
 
-.form-input input {
-    height: 30px;
-    
-    border: none;
-    border-bottom: 2px solid #F55A5A;
-    outline: 0;
-    transition: all 0.3s ease-in-out;
+.form__element {
+  display: flex;
+  flex-direction: column;
+  position: relative;
 
-    font-size: 14px;
-    text-indent: 2px;
+  margin-bottom: 20px;
 }
 
-.form-input textarea {
-    min-height: 30px;
-    max-height: 150px;
-    resize: vertical;
-    overflow: visible;
+.form__input {
+  height: 30px;
 
-    border: none;
-    border-bottom: 2px solid #F55A5A;
-    outline: 0;
-    transition: all 0.05s ease-in-out;
+  border: none;
+  border-bottom: 2px solid #f55a5a;
+  outline: 0;
+  transition: all 0.3s ease-in-out;
 
-    font-size: 14px;
-    text-indent: 2px;
+  font-size: 14px;
+  text-indent: 2px;
 }
 
-.form-input label span {
-    position: absolute;
-    text-indent: 4px;
-    top: 5px;
-    transition: all 0.2s ease-in-out;
-    font-size: 14px;
-
-    cursor: text;
-    color: #2B283A;
+.form__input:focus,
+textarea:focus {
+  border-color: #bdbfc0;
 }
 
-.form-input textarea:focus {
-    min-height: 60px;
-    transition: all 0.2s ease-in-out;
+.form__input:valid,
+textarea:valid {
+  border-color: #bdbfc0;
 }
 
-.form-input input:focus, textarea:focus {
-    border-color: #BDBFC0;
+.form__textarea {
+  min-height: 30px;
+  max-height: 150px;
+  resize: vertical;
+  overflow: visible;
+
+  border: none;
+  border-bottom: 2px solid #f55a5a;
+  outline: 0;
+  transition: all 0.05s ease-in-out;
+
+  font-size: 14px;
+  text-indent: 2px;
 }
 
-.form-input input:valid, textarea:valid {
-    border-color: #BDBFC0;
+.form__textarea:focus {
+  min-height: 60px;
+  transition: all 0.2s ease-in-out;
 }
 
-.form-input input:focus + label > span, textarea:focus + label > span,
-.form-input input:valid + label > span, textarea:valid + label > span {
-    top: -14px;
-    font-size: 12px;
+.form__span {
+  position: absolute;
+  top: 5px;
+  transition: all 0.2s ease-in-out;
+
+  font-size: 14px;
+  text-indent: 4px;
+
+  cursor: text;
+  color: #2b283a;
 }
 
-.form-button {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    align-self: center;
-    justify-content: flex-start;
-    position: relative;
-  
-    height: 40px;
-    width: 200px;
-  
-    background-color: #ffffff;
-    border: solid 2px;
-    border-color: #ffffff;
-    opacity: 1;
-    border-radius: 20px;
-  
-    box-shadow: 0px 2px 4px #BDBFC0;
-  
-    transition: all 0.2s ease-in-out;
+.form__input:focus + .form__label > .form__span,
+.form__textarea:focus + .form__label > .form__span,
+.form__input:valid + .form__label > .form__span,
+.form__textarea:valid + .form__label > .form__span {
+  top: -14px;
+  font-size: 12px;
 }
 
-.form-button:hover {
-    background-color: #F55A5A;
-    border-color: #F55A5A;
-    cursor: pointer;
+.button--form {
+  align-self: center;
+  position: relative;
+
+  height: 36px;
+  width: 200px;
+
+  background-color: #ffffff;
+  border-color: #ffffff;
+  color: #000000;
+
+  box-shadow: 0px 2px 4px #000000;
+}
+
+.button--form:hover {
+  background-color: #f55a5a;
+  border-color: #f55a5a;
+  cursor: pointer;
+}
+
+@media (max-width: 499px) {
+  .modal__content {
+    width: 80vw;
+  }
+
+  .modal__title {
+    font-size: 0.75em;
+  }
+
+  .icon--close img {
+    height: 12px;
+  }
+}
+
+@media (min-width: 500px) and (max-width: 900px) {
+  .modal__content {
+    width: 60vw;
+  }
 }

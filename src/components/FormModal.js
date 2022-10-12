@@ -18,8 +18,19 @@ export default function FormModal(props) {
         }));
     }
 
+    function formatDate(date) {
+      return new Date(date).toLocaleString("pt-BR", {
+        day: "numeric",
+        month: "short",
+        year: "numeric",
+      });
+    }
+
     function handleSubmit() {
-        props.submitData(props.formData);
+      props.formData.startDate = formatDate(props.formData.startDate);
+      props.formData.endDate = formatDate(props.formData.endDate);
+
+      props.submitData(props.formData);
     }
 
     return ReactDOM.createPortal(
@@ -29,16 +40,16 @@ export default function FormModal(props) {
             timeout={{ enter: 0, exit: 300 }} 
         >
             <div className={`modal ${props.showForm ? "show" : ""}`}>
-                <div className="modal-content" onClick={e => e.stopPropagation()}>
-                    <header className="modal-header">
-                        <h2>Qual seu próximo destino?</h2>
-                        <div className="icon-close">
+                <div className="modal__content" onClick={e => e.stopPropagation()}>
+                    <header className="modal__header">
+                        <h3 className="modal__title">Qual seu próximo destino?</h3>
+                        <div className="icon--close">
                             <img src="/images/close-icon.svg" alt="Ícone de fechar" onClick={handleClick}/>
                         </div>
                     </header>
                     <div className="form">
-                        <div className="form-inputs">
-                            <div className="form-input">
+                        <div className="form__elements">
+                            <div className="form__element">
                                 <input 
                                     type="text"
                                     name="title"
@@ -46,10 +57,13 @@ export default function FormModal(props) {
                                     value={props.formData.title}
                                     onChange={handleChanges}
                                     required
+                                    className="form__input"
                                 />
-                                <label htmlFor="title"><span>Cidade - Local</span></label>
+                                <label htmlFor="title" className="form__label">
+                                  <span className="form__span">Cidade - Local</span>
+                                </label>
                             </div>
-                            <div className="form-input">
+                            <div className="form__element">
                                 <input 
                                     type="text"
                                     name="location"
@@ -57,10 +71,13 @@ export default function FormModal(props) {
                                     value={props.formData.location}
                                     onChange={handleChanges}
                                     required
+                                    className="form__input"
                                 />
-                                <label htmlFor="location"><span>País</span></label>
+                                <label htmlFor="location" className="form__label">
+                                  <span className="form__span">País</span>
+                                </label>
                             </div>
-                            <div className="form-input">
+                            <div className="form__element">
                                 <input 
                                     type="text"
                                     name="googleMapsUrl"
@@ -68,10 +85,13 @@ export default function FormModal(props) {
                                     value={props.formData.googleMapsUrl}
                                     onChange={handleChanges}
                                     required
+                                    className="form__input"
                                 />
-                                <label htmlFor="googleMapsUrl"><span>Link do local no Google Maps</span></label>
+                                <label htmlFor="googleMapsUrl" className="form__label">
+                                  <span className="form__span">Link do local no Google Maps</span>
+                                </label>
                             </div>
-                            <div className="form-input">
+                            <div className="form__element">
                                 <input 
                                     type="date"
                                     name="startDate"
@@ -79,9 +99,10 @@ export default function FormModal(props) {
                                     value={props.formData.startDate}
                                     onChange={handleChanges}
                                     required
+                                    className="form__input"
                                 />
                             </div>
-                            <div className="form-input">
+                            <div className="form__element">
                                 <input 
                                     type="date"
                                     name="endDate"
@@ -89,9 +110,10 @@ export default function FormModal(props) {
                                     value={props.formData.endDate}
                                     onChange={handleChanges}
                                     required
+                                    className="form__input"
                                 />
                             </div>
-                            <div className="form-input">
+                            <div className="form__element">
                                 <textarea 
                                     type="text"
                                     name="description"
@@ -99,10 +121,14 @@ export default function FormModal(props) {
                                     value={props.formData.description}
                                     onChange={handleChanges}
                                     required
+                                    maxLength={256}
+                                    className="form__textarea"
                                 />
-                                <label htmlFor="description"><span>Descrição do local</span></label>
+                                <label htmlFor="description" className="form__label">
+                                  <span className="form__span">Descrição do local</span>
+                                </label>
                             </div>
-                            <div className="form-input">
+                            <div className="form__element">
                                 <input 
                                     type="text"
                                     name="imageUrl"
@@ -110,14 +136,17 @@ export default function FormModal(props) {
                                     value={props.formData.imageUrl}
                                     onChange={handleChanges}
                                     required
+                                    className="form__input"
                                 />
-                                <label htmlFor="imageUrl"><span>Link de uma foto representativa</span></label>
+                                <label htmlFor="imageUrl" className="form__label">
+                                  <span className="form__span">Link de uma foto representativa</span>
+                                </label>
                             </div>
                         </div>
                         {
-                        <button className="form-button" onClick={handleSubmit}>
-                            <img src="/images/add-destination-icon.svg" alt="Ícone de adicionar novo destino" className="add-icon" />
-                            <h3 className="add-text">Cadastrar novo destino</h3>
+                        <button className="button button--form" onClick={handleSubmit}>
+                            <img src="/images/add-destination-icon.svg" alt="Ícone de adicionar novo destino" className="button__icon" />
+                            <h3 className="button__text">{props.edit ? "Confirmar edição" : "Cadastrar novo destino"}</h3>
                         </button>
                         }
                     </div>
